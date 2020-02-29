@@ -1,4 +1,4 @@
-import { types, Instance } from 'mobx-state-tree';
+import { types, Instance } from "mobx-state-tree";
 
 export const Project = types.model({
   name: types.string,

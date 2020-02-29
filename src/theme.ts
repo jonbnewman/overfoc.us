@@ -1,14 +1,14 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/grey';
-import lightBlue from '@material-ui/core/colors/lightBlue';
+import { createMuiTheme } from "@material-ui/core/styles";
+import grey from "@material-ui/core/colors/grey";
+import lightBlue from "@material-ui/core/colors/lightBlue";
 
-export const headerPadding = '1rem';
-export const imageSize = '4rem';
+export const headerPadding = "1rem";
+export const imageSize = "4rem";
 export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
 
 export default createMuiTheme({
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
       main: grey[900],
     },
@@ -17,25 +17,25 @@ export default createMuiTheme({
     },
   },
   typography: {
-    fontFamily: 'Lato',
+    fontFamily: "Lato",
     htmlFontSize: 16,
     button: {
-      textTransform: 'none',
+      textTransform: "none",
     },
   },
   props: {
     MuiTextField: {
-      variant: 'outlined',
+      variant: "outlined",
     },
     MuiLink: {
-      underline: 'hover',
-      color: 'secondary',
+      underline: "hover",
+      color: "secondary",
     },
     MuiButton: {
-      variant: 'contained',
-      color: 'primary',
+      variant: "contained",
+      color: "primary",
       disableElevation: true,
-      size: 'large',
+      size: "large",
     },
   },
 });

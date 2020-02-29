@@ -1,6 +1,6 @@
-import React from 'react';
-import Container from './Container';
-import Footer from './Footer';
+import React from "react";
+import Container from "./Container";
+import Footer from "./Footer";
 
 export default () => (
   <Footer>

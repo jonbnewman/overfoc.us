@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
-import { grey } from '@material-ui/core/colors';
+import styled from "styled-components/macro";
+import { grey } from "@material-ui/core/colors";
 
 export default styled.div`
   grid-area: footer;
