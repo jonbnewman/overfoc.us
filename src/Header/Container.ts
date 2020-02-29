@@ -1,12 +1,7 @@
 import styled from 'styled-components/macro';
-import { constraint } from '../Constraint';
-import { headerPadding } from '../theme';
+import { grey } from '@material-ui/core/colors';
 
 export default styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: 'image name';
-  grid-column-gap: 1rem;
-  padding: ${headerPadding} 0;
-  ${constraint};
+  grid-area: header;
+  border-bottom: 1px solid ${grey[400]};
 `;

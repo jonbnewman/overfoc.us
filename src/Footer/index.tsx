@@ -1,4 +1,9 @@
 import React from 'react';
 import Container from './Container';
+import Footer from './Footer';
 
-export default () => <Container>Footer</Container>;
+export default () => (
+  <Footer>
+    <Container>Footer</Container>
+  </Footer>
+);

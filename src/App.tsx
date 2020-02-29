@@ -1,18 +1,22 @@
 import React from 'react';
-import './App.css';
-
+import { createStore, useProvider } from 'mobx-store-provider';
 import Container from './Container';
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
+import { Store, IStore } from './Store';
 
 function App() {
+  const store: IStore = createStore(() => Store.create());
+  const Provider = useProvider();
   return (
-    <Container>
-      <Header />
-      <Body />
-      <Footer />
-    </Container>
+    <Provider value={store}>
+      <Container>
+        <Header />
+        <Body />
+        <Footer />
+      </Container>
+    </Provider>
   );
 }
 

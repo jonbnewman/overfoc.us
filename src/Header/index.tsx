@@ -1,14 +1,22 @@
 import React from 'react';
+import { observer } from 'mobx-react';
+import { useStore } from 'mobx-store-provider';
+import { IStore } from '../Store';
+import Content from './Content';
 import Container from './Container';
-import Header from './Header';
-import Name from './Name';
+import Information from './Information';
 import Avatar from './Avatar';
 
-export default () => (
-  <Header>
+function Header() {
+  const store: IStore = useStore();
+  return (
     <Container>
-      <Avatar alt="Jonathan Newman" src="/images/face.jpg" />
-      <Name>Jonathan Newman</Name>
+      <Content>
+        <Avatar alt={store.name} src={store.image} />
+        <Information />
+      </Content>
     </Container>
-  </Header>
-);
+  );
+}
+
+export default observer(Header);
