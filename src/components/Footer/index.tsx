@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "@material-ui/core/Link";
+import Chip from "@material-ui/core/Chip";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import { useStore } from "mobx-store-provider";
 import { IStore } from "state/Store";
 import Content from "./Content";
 import Container from "./Container";
-import GithubLink from "./GithubLink";
 
 function Footer() {
   const store: IStore = useStore();
@@ -12,7 +13,7 @@ function Footer() {
     <Container>
       <Content>
         <div>
-          <GithubLink href={store.github} />
+          <Chip component="a" href={store.site_repo} icon={<GitHubIcon />} label="view on GitHub" clickable />
         </div>
         <div>
           <Link href={store.circleci}>

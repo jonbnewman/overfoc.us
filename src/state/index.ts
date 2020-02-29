@@ -23,5 +23,6 @@ export const appState = {
   image: "/images/face.jpg",
   build_state: "https://circleci.com/gh/jonbnewman/overfoc.us.svg?style=svg",
   circleci: "https://circleci.com/gh/jonbnewman/overfoc.us",
+  site_repo: "https://github.com/jonbnewman/overfoc.us",
   projects,
 };

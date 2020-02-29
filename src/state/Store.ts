@@ -7,6 +7,7 @@ export const Store = types.model({
   github: types.string,
   build_state: types.string,
   circleci: types.string,
+  site_repo: types.string,
   image: types.string,
   projects: types.array(Project),
 });
