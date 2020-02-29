@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { constraint } from "components/Constraint";
-import { upTo } from "theme";
+import { upTo, headerCollapseSize } from "theme";
 
 export default styled.div`
   align-self: center;
@@ -12,7 +12,7 @@ export default styled.div`
     "info menu menu";
   ${constraint}
 
-  ${upTo("sm")`
+  ${upTo(headerCollapseSize)`
     grid-template-columns: 1fr auto;
     grid-template-areas:
       ". info"

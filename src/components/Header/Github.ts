@@ -1,13 +1,12 @@
 import styled from "styled-components/macro";
-import { upTo } from "theme";
-import { imageSize } from "theme";
+import { upTo, headerCollapseSize } from "theme";
 
 export default styled.div`
   grid-area: github;
   align-self: center;
 
-  ${upTo("sm")`
-    padding-left: calc(${imageSize} + 1rem);
+  ${upTo(headerCollapseSize)`
+    justify-self: end;
     padding-bottom: 1rem;
   `}
 `;

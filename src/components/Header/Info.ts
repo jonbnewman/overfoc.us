@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { upTo } from "theme";
+import { upTo, headerCollapseSize } from "theme";
 
 export default styled.div`
   grid-area: info;
@@ -9,7 +9,7 @@ export default styled.div`
   grid-column-gap: 1rem;
   padding: 1rem 0;
 
-  ${upTo("sm")`
+  ${upTo(headerCollapseSize)`
     grid-template-areas: "basic image";
   `}
 `;

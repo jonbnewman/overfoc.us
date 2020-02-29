@@ -9,6 +9,7 @@ export const headerPadding = "1rem";
 export const imageSize = "4rem";
 export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
 
+export const headerCollapseSize = "sm";
 const breakpoints: any = {
   xs: 0,
   sm: 576,
@@ -16,6 +17,7 @@ const breakpoints: any = {
   lg: 992,
   xl: 1200,
 };
+export const constraintSize = `${breakpoints["md"]}px`;
 
 export function upTo(breakpoint: string | number) {
   return (...args: any[]) => {
