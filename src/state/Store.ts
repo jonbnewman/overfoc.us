@@ -11,19 +11,26 @@ export const Store = types
     site_repo: types.string,
     image: types.string,
     projects: types.array(Project),
+    pagePath: types.maybeNull(types.string),
   })
   .views(self => ({
     get project_status_types() {
-      return self.projects.reduce((statuses: any[], project: any) => {
-        if (!statuses.find(({ status }) => status === project.status)) {
-          statuses.push({
-            label: project.status.charAt(0).toUpperCase() + project.status.slice(1),
-            path: `/projects/${project.status}`,
-            status: project.status,
+      return self.projects.reduce((statusTypes: any[], { status }: any) => {
+        if (!statusTypes.find(({ statusType }) => statusType === status)) {
+          const label = status.charAt(0).toUpperCase() + status.slice(1);
+          statusTypes.push({
+            label,
+            path: `/projects/${status}`,
+            status: status,
           });
         }
-        return statuses;
+        return statusTypes;
       }, []);
+    },
+  }))
+  .actions(self => ({
+    setPagePath(path: string) {
+      self.pagePath = path;
     },
   }));
 

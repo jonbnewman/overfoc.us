@@ -25,7 +25,7 @@ function App() {
           <Body>
             <Switch>
               {store.project_status_types.map(statusType => (
-                <Route path={statusType.path} component={ProjectList} />
+                <Route path={statusType.path} component={ProjectList} key={statusType.status} />
               ))}
               <Route path="/" component={Home} />
             </Switch>
