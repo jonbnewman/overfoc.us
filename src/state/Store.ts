@@ -56,6 +56,10 @@ export const Store = types
     },
   }))
   .actions(self => ({
+    setPagePath(path: string) {
+      self.pagePath = path;
+      return self;
+    },
     loadMarkdown: flow(function* loadMarkdown(path) {
       let markdown: any = null;
       if (!self.isLoading) {
@@ -70,12 +74,6 @@ export const Store = types
       }
       return markdown;
     }),
-  }))
-  .actions(self => ({
-    setPagePath(path: string) {
-      self.pagePath = path;
-      return self;
-    },
   }));
 
 export interface IStore extends Instance<typeof Store> {}
