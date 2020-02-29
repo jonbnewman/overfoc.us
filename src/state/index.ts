@@ -22,5 +22,6 @@ export const appState = {
   github: "https://github.com/jonbnewman",
   image: "/images/face.jpg",
   build_state: "https://circleci.com/gh/jonbnewman/overfoc.us.svg?style=svg",
+  circleci: "https://circleci.com/gh/jonbnewman/overfoc.us",
   projects,
 };
