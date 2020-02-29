@@ -1,5 +1,5 @@
 jobs:
-  build:
+  deploy:
     branches:
       ignore:
         - gh-pages
@@ -20,3 +20,12 @@ jobs:
 orbs:
   node: circleci/node@1.1
 version: 2.1
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
