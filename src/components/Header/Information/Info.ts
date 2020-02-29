@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { upTo } from "theme";
 
 export default styled.div`
   grid-area: info;
@@ -7,4 +8,8 @@ export default styled.div`
   grid-template-areas: "image basic";
   grid-column-gap: 1rem;
   padding: 1rem 0;
+
+  ${upTo("sm")`
+    padding-bottom: 0;
+  `}
 `;
