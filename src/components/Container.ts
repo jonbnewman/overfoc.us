@@ -1,9 +1,8 @@
 import styled from "styled-components/macro";
-import { headerHeight } from "./theme";
 
 export default styled.div`
   display: grid;
-  grid-template-rows: ${headerHeight} 1fr 120px;
+  grid-template-rows: auto 1fr 120px;
   grid-template-areas:
     "header"
     "body"

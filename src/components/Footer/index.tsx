@@ -1,6 +1,6 @@
 import React from "react";
 import { useStore } from "mobx-store-provider";
-import { IStore } from "../state/Store";
+import { IStore } from "state/Store";
 import Content from "./Content";
 import Container from "./Container";
 import BuildState from "./BuildState";

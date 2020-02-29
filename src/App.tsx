@@ -1,11 +1,11 @@
 import React from "react";
 import { createStore, useProvider } from "mobx-store-provider";
-import Container from "./Container";
-import Header from "./Header";
-import Body from "./Body";
-import Footer from "./Footer";
-import { Store, IStore } from "./state/Store";
-import { appState } from "./state";
+import Container from "components/Container";
+import Header from "components/Header";
+import Body from "components/Body";
+import Footer from "components/Footer";
+import { Store, IStore } from "state/Store";
+import { appState } from "state";
 
 function App() {
   const store: IStore = createStore(() => Store.create(appState));

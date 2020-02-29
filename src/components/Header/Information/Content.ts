@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
-import { constraint } from "../Constraint";
-import { headerPadding } from "../theme";
+import { constraint } from "components/Constraint";
+import { headerPadding } from "theme";
 
 export default styled.div`
   display: grid;

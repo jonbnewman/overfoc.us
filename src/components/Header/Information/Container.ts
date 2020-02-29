@@ -1,9 +1,10 @@
 import styled from "styled-components/macro";
+import { constraint } from "components/Constraint";
 
 export default styled.div`
-  grid-area: links;
   align-self: center;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-areas: basic . links;
+  grid-template-areas: "info . links";
+  ${constraint}
 `;
