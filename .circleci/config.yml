@@ -1,5 +1,8 @@
 jobs:
   build:
+    branches:
+      ignore:
+        - gh-pages
     executor:
       name: node/default
       tag: '10.4'
