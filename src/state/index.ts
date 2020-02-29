@@ -21,5 +21,6 @@ export const appState = {
   email: "jbnewm@gmail.com",
   github: "https://github.com/jonbnewman",
   image: "/images/face.jpg",
+  build_state: "https://circleci.com/gh/jonbnewman/overfoc.us.svg?style=svg",
   projects,
 };
