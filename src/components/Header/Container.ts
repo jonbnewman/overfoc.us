@@ -1,9 +1,18 @@
 import styled from "styled-components/macro";
-import { grey } from "@material-ui/core/colors";
-import { headerFooterBg } from "theme";
+import { constraint } from "components/Constraint";
+import { upTo } from "theme";
 
 export default styled.div`
-  grid-area: header;
-  background: ${headerFooterBg};
-  border-bottom: 1px solid ${grey[400]};
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "info . links";
+  ${constraint}
+
+  ${upTo("sm")`
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      ". info"
+      ". links";
+  `}
 `;
