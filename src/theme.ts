@@ -44,6 +44,9 @@ export function downTo(breakpoint: string | number) {
 export default createMuiTheme({
   palette: {
     type: "light",
+    primary: {
+      main: grey[800],
+    },
     secondary: {
       main: indigo[500],
     },

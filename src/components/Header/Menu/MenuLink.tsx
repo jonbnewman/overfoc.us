@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Link as RouterLink } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 interface MenuLinkInterface {
@@ -9,10 +9,18 @@ interface MenuLinkInterface {
 }
 
 function MenuLink(props: MenuLinkInterface) {
-  return <Button component={RouterLink} {...props} />;
+  return <Button exact component={RouterLink} {...props} size="small" color="primary" />;
 }
 
 export default styled(MenuLink)`
-  padding: 0.25rem 0.5rem;
-  display: block;
+  && {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &.active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
 `;
