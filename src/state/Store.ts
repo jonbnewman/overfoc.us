@@ -1,4 +1,4 @@
-import { types, Instance } from "mobx-state-tree";
+import { types, flow, Instance } from "mobx-state-tree";
 import { Project } from "./Project";
 
 function getStatusLabel(status: string) {
@@ -32,12 +32,14 @@ export const Store = types
     image: types.string,
     projects: types.array(Project),
     pagePath: types.maybeNull(types.string),
+    isLoading: false,
+    loadedMarkdown: types.maybe(types.string),
   })
   .views(self => ({
     get project_status_types() {
-      return self.projects.reduce((statusTypes: any[], { status }: any) => {
-        if (!statusTypes.find(({ statusType }) => statusType === status)) {
-          statusTypes.push(getStatusObject(status));
+      return self.projects.reduce((statusTypes: any[], project: any) => {
+        if (!statusTypes.find(({ status }) => status === project.status)) {
+          statusTypes.push(getStatusObject(project.status));
         }
         return statusTypes;
       }, []);
@@ -54,8 +56,25 @@ export const Store = types
     },
   }))
   .actions(self => ({
+    loadMarkdown: flow(function* loadMarkdown(path) {
+      let markdown: any = null;
+      if (!self.isLoading) {
+        self.isLoading = true;
+        try {
+          markdown = yield fetch(path).then(response => response.text());
+          self.loadedMarkdown = markdown;
+        } catch (error) {
+          throw error;
+        }
+        self.isLoading = false;
+      }
+      return markdown;
+    }),
+  }))
+  .actions(self => ({
     setPagePath(path: string) {
       self.pagePath = path;
+      return self;
     },
   }));
 

@@ -14,9 +14,20 @@ import Footer from "components/Footer";
 import Home from "pages/Home";
 import ProjectList from "pages/ProjectList";
 
+declare global {
+  interface Window {
+    store: any;
+  }
+}
+
 function App() {
   const store: IStore = createStore(() => Store.create(appState));
   const Provider = useProvider();
+
+  if (process.env.NODE_ENV !== "production") {
+    window.store = store;
+  }
+
   return (
     <Provider value={store}>
       <Router>

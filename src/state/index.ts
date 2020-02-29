@@ -22,6 +22,24 @@ export const projects = [
       "It aims to be fully featured, expressive, and easy to use while remaining as idiomatic and compatible with KnockoutJS as possible.",
     ],
   },
+  {
+    name: "jQuery Placement",
+    github: "https://github.com/jonbnewman/jquery.placement",
+    status: projectStatus.archived,
+    description: ["jQuery plugin providing an easy way of getting all of an elements layout information."],
+  },
+  {
+    name: "Memoro",
+    github: "https://github.com/jonbnewman/Memoro",
+    status: projectStatus.archived,
+    description: ["An experimental DB abstraction/ORM written in PHP"],
+  },
+  {
+    name: "Despot",
+    github: "https://github.com/jonbnewman/Despot",
+    status: projectStatus.archived,
+    description: ["An experimental PHP web framework"],
+  },
 ];
 
 export const appState = {
