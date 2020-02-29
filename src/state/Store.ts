@@ -27,8 +27,12 @@ export const Store = types
         return statusTypes;
       }, []);
     },
-    get current_project() {
-      return self.projects.find(project => self.pagePath === `/projects/${project.status}`);
+    get current_status_type() {
+      const match = self.pagePath?.match(/\/.*\/(.*)$/);
+      if (match) {
+        return match[1];
+      }
+      return null;
     },
   }))
   .actions(self => ({
