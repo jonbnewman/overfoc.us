@@ -4,6 +4,7 @@ import { useStore } from "mobx-store-provider";
 import { IStore } from "state/Store";
 import PageInterface from "../PageInterface";
 import ReactMarkdown from "react-markdown";
+import LoadingDisplay from "pages/LoadingDisplay";
 
 function Home({ location }: PageInterface) {
   const store: IStore = useStore();
@@ -11,7 +12,7 @@ function Home({ location }: PageInterface) {
     store.loadMarkdown(require("./contents.md"));
     store.setPagePath(location.pathname);
   }, [store, location.pathname]);
-  return store.isLoading ? null : <ReactMarkdown source={store.loadedMarkdown} />;
+  return store.isLoading ? <LoadingDisplay /> : <ReactMarkdown source={store.loadedMarkdown} />;
 }
 
 export default observer(Home);
