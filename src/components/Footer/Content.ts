@@ -3,5 +3,6 @@ import { constraint } from "components/Constraint";
 
 export default styled.div`
   padding-top: 1rem;
+  text-align: right;
   ${constraint}
 `;
