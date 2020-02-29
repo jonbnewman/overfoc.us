@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components/macro";
 import Badge from "@material-ui/core/Badge";
 import Avatar from "@material-ui/core/Avatar";
-import { imageSize, headerCollapseSize, downTo } from "theme";
+import { imageSize, headerCollapseSize, downTo, headerFooterBg } from "theme";
 import { Link } from "@material-ui/core";
 
 const noDisplay = css`
@@ -24,7 +24,8 @@ const ImageAvatar = styled(Avatar)`
 
 const Image = styled.img`
   border-radius: 24px;
-  border: 3px solid white;
+  border: 3px solid ${headerFooterBg};
+  background: ${headerFooterBg};
   &:hover {
     box-shadow: 0 1px 3px -1px black;
   }
