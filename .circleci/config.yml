@@ -15,10 +15,13 @@ jobs:
           name: Deploy to github
           command: |
             export GH_TOKEN=$GH_TOKEN
-            export GITHUB_TOKEN=$GH_TOKEN
             git config --global user.email $GH_EMAIL
             git config --global user.name $GH_NAME
-            npm run deploy
+            cd public
+            git init
+            git add .
+            git commit -m "Deploy to Github Pages"
+            git push --force --quiet "https://${GH_TOKEN}@github.com/jonbnewman/overfoc.us.git" master:gh-pages > /dev/null 2>&1
 orbs:
   node: circleci/node@1.1
 version: 2.1
