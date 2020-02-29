@@ -1,4 +1,4 @@
 import React from 'react';
 import Container from './Container';
 
-export default () => <Container>body</Container>;
+export default () => <Container>Body</Container>;

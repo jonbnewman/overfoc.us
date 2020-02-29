@@ -2,6 +2,10 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 
+export const headerPadding = '1rem';
+export const imageSize = '4rem';
+export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
+
 export default createMuiTheme({
   palette: {
     type: 'light',
