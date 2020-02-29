@@ -27,6 +27,9 @@ export const Store = types
         return statusTypes;
       }, []);
     },
+    get current_project() {
+      return self.projects.find(project => self.pagePath === `/projects/${project.status}`);
+    },
   }))
   .actions(self => ({
     setPagePath(path: string) {
