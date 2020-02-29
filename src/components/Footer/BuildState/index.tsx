@@ -1,9 +1,9 @@
 import React from "react";
-import Container from "./Container";
-import Column from "./Column";
 import { Link } from "@material-ui/core";
 import { useStore } from "mobx-store-provider";
 import { IStore } from "state/Store";
+import Container from "./Container";
+import Column from "./Column";
 
 interface BuildStateInterface {
   src: string;
