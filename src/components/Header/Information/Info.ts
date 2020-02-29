@@ -10,6 +10,6 @@ export default styled.div`
   padding: 1rem 0;
 
   ${upTo("sm")`
-    padding-bottom: 0;
+    grid-template-areas: "basic image";
   `}
 `;

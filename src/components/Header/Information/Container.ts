@@ -10,9 +10,9 @@ export default styled.div`
   ${constraint}
 
   ${upTo("sm")`
-  grid-template-columns: auto ;
-  grid-template-areas:
-    "info"
-    "links";
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      ". info"
+      ". links";
   `}
 `;
