@@ -1,7 +1,8 @@
 import { createMuiTheme } from "@material-ui/core/styles";
+import indigo from "@material-ui/core/colors/indigo";
 import grey from "@material-ui/core/colors/grey";
-import lightBlue from "@material-ui/core/colors/lightBlue";
 
+export const headerFooterBg = grey[50];
 export const headerPadding = "1rem";
 export const imageSize = "4rem";
 export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
@@ -9,11 +10,8 @@ export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
 export default createMuiTheme({
   palette: {
     type: "light",
-    primary: {
-      main: grey[900],
-    },
     secondary: {
-      main: lightBlue[700],
+      main: indigo[500],
     },
   },
   typography: {

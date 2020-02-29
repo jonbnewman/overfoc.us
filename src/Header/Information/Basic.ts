@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export default styled.div`
+  grid-area: basic;
   display: grid;
   grid-auto-flow: row;
   float: left;

@@ -1,6 +1,4 @@
 import styled from "styled-components/macro";
-import grey from "@material-ui/core/colors/grey";
-
 import { headerHeight } from "./theme";
 
 export default styled.div`
@@ -12,7 +10,6 @@ export default styled.div`
     "footer";
   grid-row-gap: 1rem;
   min-height: 100vh;
-  background: ${grey[50]};
   font-family: "Lato", sans-serif;
 
   * {

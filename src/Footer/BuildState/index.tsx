@@ -9,7 +9,6 @@ interface BuildStateInterface {
 function BuildState({ src }: BuildStateInterface) {
   return (
     <Container>
-      <Column>Latest build</Column>
       <Column>
         <img alt="Latest CircleCI build" src={src} />
       </Column>
