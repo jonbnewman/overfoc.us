@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { useStore } from 'mobx-store-provider';
-import { IStore } from '../Store';
+import { IStore } from '../state/Store';
 import Content from './Content';
 import Container from './Container';
 import Information from './Information';

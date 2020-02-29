@@ -11,7 +11,7 @@ export default styled.div`
     'body'
     'footer';
   grid-row-gap: 1rem;
-  height: 100vh;
+  min-height: 100vh;
   background: ${grey[50]};
   font-family: 'Lato', sans-serif;
 
