@@ -6,9 +6,10 @@ export default styled.div`
   align-self: center;
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   grid-template-areas:
     "info . github"
-    ". menu menu";
+    "info menu menu";
   ${constraint}
 
   ${upTo("sm")`

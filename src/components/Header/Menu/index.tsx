@@ -12,7 +12,6 @@ function Menu() {
     }
     return statuses;
   }, []);
-  console.info(statusTypes);
   return (
     <Container>
       <MenuLink to="/">Home</MenuLink>
