@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components/macro";
 import Badge from "@material-ui/core/Badge";
 import Avatar from "@material-ui/core/Avatar";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import { imageSize, headerCollapseSize, downTo } from "theme";
 import { Link } from "@material-ui/core";
 
