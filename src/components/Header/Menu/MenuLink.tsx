@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 
 interface MenuLinkInterface {
   to: string;
+  startIcon?: any;
   children?: any;
 }
 
@@ -14,8 +15,8 @@ function MenuLink(props: MenuLinkInterface) {
 
 export default styled(MenuLink)`
   && {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 

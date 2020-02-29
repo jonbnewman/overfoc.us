@@ -6,16 +6,10 @@ import MenuLink from "./MenuLink";
 
 function Menu() {
   const store: IStore = useStore();
-  const statusTypes = store.projects.reduce((statuses: any[], project: any) => {
-    if (!statuses.includes(project.status)) {
-      statuses.push(project.status);
-    }
-    return statuses;
-  }, []);
   return (
     <Container>
       <MenuLink to="/">Home</MenuLink>
-      {statusTypes.map((statusType: string) => (
+      {store.project_status_types.map((statusType: string) => (
         <MenuLink key={statusType} to={statusType}>
           {statusType.charAt(0).toUpperCase() + statusType.slice(1)}
         </MenuLink>
