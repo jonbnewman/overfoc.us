@@ -11,10 +11,14 @@ function Footer() {
   return (
     <Container>
       <Content>
-        <GithubLink href={store.github} />
-        <Link href={store.circleci}>
-          <img alt="Latest CircleCI build status" src={store.build_state} />
-        </Link>
+        <div>
+          <GithubLink href={store.github} />
+        </div>
+        <div>
+          <Link href={store.circleci}>
+            <img alt="Latest CircleCI build status" src={store.build_state} />
+          </Link>
+        </div>
       </Content>
     </Container>
   );
