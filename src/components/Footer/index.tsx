@@ -5,12 +5,12 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { useStore } from "mobx-store-provider";
 import { IStore } from "state/Store";
 import Content from "./Content";
-import Container from "./Container";
+import FooterArea from "./FooterArea";
 
 function Footer() {
   const store: IStore = useStore();
   return (
-    <Container>
+    <FooterArea>
       <Content>
         <div>
           <Chip component="a" href={store.site_repo} icon={<GitHubIcon />} label="view on GitHub" clickable />
@@ -21,7 +21,7 @@ function Footer() {
           </Link>
         </div>
       </Content>
-    </Container>
+    </FooterArea>
   );
 }
 

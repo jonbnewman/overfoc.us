@@ -6,13 +6,16 @@ export default styled.div`
   align-self: center;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-areas: "info . links";
+  grid-template-areas:
+    "info . github"
+    ". menu menu";
   ${constraint}
 
   ${upTo("sm")`
     grid-template-columns: 1fr auto;
     grid-template-areas:
       ". info"
-      ". links";
+      ". github"
+      "menu menu";
   `}
 `;

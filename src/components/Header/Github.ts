@@ -3,7 +3,7 @@ import { upTo } from "theme";
 import { imageSize } from "theme";
 
 export default styled.div`
-  grid-area: links;
+  grid-area: github;
   align-self: center;
 
   ${upTo("sm")`

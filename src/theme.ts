@@ -3,6 +3,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import indigo from "@material-ui/core/colors/indigo";
 import grey from "@material-ui/core/colors/grey";
 
+export const lineColor = grey[400];
 export const headerFooterBg = grey[50];
 export const headerPadding = "1rem";
 export const imageSize = "4rem";

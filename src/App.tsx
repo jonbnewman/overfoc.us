@@ -5,7 +5,7 @@ import { HashRouter as Router } from "react-router-dom";
 import { Store, IStore } from "state/Store";
 import { appState } from "state";
 
-import Container from "components/Container";
+import AppGrid from "components/AppGrid";
 import Header from "components/Header";
 import Body from "components/Body";
 import Footer from "components/Footer";
@@ -16,11 +16,11 @@ function App() {
   return (
     <Provider value={store}>
       <Router>
-        <Container>
+        <AppGrid>
           <Header />
           <Body />
           <Footer />
-        </Container>
+        </AppGrid>
       </Router>
     </Provider>
   );
