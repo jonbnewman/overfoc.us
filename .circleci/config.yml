@@ -13,7 +13,10 @@ jobs:
           command: npm run test
       - run:
           name: Deploy
-          command: npm run deploy
+          command: |
+            git config --global user.email $GH_EMAIL
+            git config --global user.name $GH_NAME
+            npm run deploy
 orbs:
   node: circleci/node@1.1
 version: 2.1
