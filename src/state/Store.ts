@@ -44,8 +44,13 @@ export const Store = types
     },
   }))
   .views(self => ({
-    get current_status() {
+    get current_status_type() {
       return self.project_status_types.find(statusType => statusType.path === self.pagePath);
+    },
+  }))
+  .views(self => ({
+    get projects_list() {
+      return self.projects.filter(project => project.status === self.current_status_type?.status);
     },
   }))
   .actions(self => ({
