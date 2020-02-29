@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 interface MenuLinkInterface {
   to: string;
   startIcon?: any;
-  children?: any;
+  children: any;
 }
 
 function MenuLink(props: MenuLinkInterface) {

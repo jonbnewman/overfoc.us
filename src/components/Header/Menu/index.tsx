@@ -9,9 +9,9 @@ function Menu() {
   return (
     <Container>
       <MenuLink to="/">Home</MenuLink>
-      {store.project_status_types.map((statusType: string) => (
-        <MenuLink key={statusType} to={statusType}>
-          {statusType.charAt(0).toUpperCase() + statusType.slice(1)}
+      {store.project_status_types.map((statusType: any) => (
+        <MenuLink key={statusType.status} to={statusType.path}>
+          {statusType.label}
         </MenuLink>
       ))}
     </Container>

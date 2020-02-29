@@ -15,8 +15,12 @@ export const Store = types
   .views(self => ({
     get project_status_types() {
       return self.projects.reduce((statuses: any[], project: any) => {
-        if (!statuses.includes(project.status)) {
-          statuses.push(project.status);
+        if (!statuses.find(({ status }) => status === project.status)) {
+          statuses.push({
+            label: project.status.charAt(0).toUpperCase() + project.status.slice(1),
+            path: `/projects/${project.status}`,
+            status: project.status,
+          });
         }
         return statuses;
       }, []);
