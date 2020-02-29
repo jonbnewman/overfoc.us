@@ -19,10 +19,16 @@ const breakpoints: any = {
 };
 export const constraintSize = `${breakpoints["md"]}px`;
 
-export function upTo(breakpoint: string | number) {
+export function upTo(breakpoint: string | number, cssStyles: any = null) {
   return (...args: any[]) => {
-    // @ts-ignore
-    const breakingCSS = css(...args);
+    let breakingCSS: any;
+    if (!cssStyles) {
+      // @ts-ignore
+      breakingCSS = css(...args);
+    } else {
+      breakingCSS = cssStyles;
+    }
+
     return css`
       @media (max-width: ${(typeof breakpoint === "string" ? breakpoints[breakpoint] : breakpoint - 1) / 16}em) {
         ${breakingCSS};
@@ -31,10 +37,16 @@ export function upTo(breakpoint: string | number) {
   };
 }
 
-export function downTo(breakpoint: string | number) {
+export function downTo(breakpoint: string | number, cssStyles: any = null) {
   return (...args: any[]) => {
-    // @ts-ignore
-    const breakingCSS = css(...args);
+    let breakingCSS: any;
+    if (!cssStyles) {
+      // @ts-ignore
+      breakingCSS = css(...args);
+    } else {
+      breakingCSS = cssStyles;
+    }
+
     return css`
       @media (min-width: ${(typeof breakpoint === "string" ? breakpoints[breakpoint] : breakpoint + 1) / 16}em) {
         ${breakingCSS};

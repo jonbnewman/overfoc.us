@@ -8,5 +8,6 @@ export default styled.div`
   ${upTo(headerCollapseSize)`
     justify-self: end;
     padding-bottom: 1rem;
+    display: none;
   `}
 `;

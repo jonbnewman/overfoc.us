@@ -21,7 +21,7 @@ function Header() {
     <HeaderArea>
       <Container>
         <Info>
-          <Avatar alt={store.name} src={store.image} />
+          <Avatar />
           <Basic>
             <Name>{store.name}</Name>
             <Email href={`mailto:${store.email}`}>{store.email}</Email>
