@@ -1,6 +1,26 @@
 import { types, Instance } from "mobx-state-tree";
 import { Project } from "./Project";
 
+function getStatusLabel(status: string) {
+  return status.charAt(0).toUpperCase() + status.slice(1);
+}
+
+function getStatusPath(status: string) {
+  return `/projects/${status}`;
+}
+
+function getStatus(status: string) {
+  return status;
+}
+
+function getStatusObject(status: string) {
+  return {
+    label: getStatusLabel(status),
+    path: getStatusPath(status),
+    status: getStatus(status),
+  };
+}
+
 export const Store = types
   .model({
     name: types.string,
@@ -17,22 +37,15 @@ export const Store = types
     get project_status_types() {
       return self.projects.reduce((statusTypes: any[], { status }: any) => {
         if (!statusTypes.find(({ statusType }) => statusType === status)) {
-          const label = status.charAt(0).toUpperCase() + status.slice(1);
-          statusTypes.push({
-            label,
-            path: `/projects/${status}`,
-            status: status,
-          });
+          statusTypes.push(getStatusObject(status));
         }
         return statusTypes;
       }, []);
     },
-    get current_status_type() {
-      const match = self.pagePath?.match(/\/.*\/(.*)$/);
-      if (match) {
-        return match[1];
-      }
-      return null;
+  }))
+  .views(self => ({
+    get current_status() {
+      return self.project_status_types.find(statusType => statusType.path === self.pagePath);
     },
   }))
   .actions(self => ({

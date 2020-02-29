@@ -7,7 +7,7 @@ import PageInterface from "../PageInterface";
 function ProjectList({ location }: PageInterface) {
   const store: IStore = useStore();
   useEffect(() => store.setPagePath(location.pathname), [store, location.pathname]);
-  return <div>{store.current_status_type}</div>;
+  return <pre>{JSON.stringify(store.current_status, null, 2)}</pre>;
 }
 
 export default observer(ProjectList);
