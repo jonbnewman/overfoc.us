@@ -28,7 +28,7 @@ function Header() {
           </Basic>
         </Info>
         <Github>
-          <Button variant="contained" color="secondary" size="large" href={store.github} startIcon={<GitHubIcon />}>
+          <Button size="small" variant="contained" color="secondary" href={store.github} startIcon={<GitHubIcon />}>
             Github
           </Button>
         </Github>

@@ -64,10 +64,8 @@ export default createMuiTheme({
       color: "secondary",
     },
     MuiButton: {
-      variant: "contained",
       color: "primary",
       disableElevation: true,
-      size: "large",
     },
   },
 });

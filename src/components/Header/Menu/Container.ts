@@ -7,4 +7,7 @@ export default styled.div`
   justify-self: end;
   border-bottom-width: 0;
   border-radius: 0.25rem 0.25rem 0 0;
+  display: grid;
+  grid-auto-flow: column;
+  background: white;
 `;
