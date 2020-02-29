@@ -19,6 +19,7 @@ jobs:
             git config --global user.name $GH_NAME
             npm run build
             cd build
+            cp -a ../.circleci .
             git init
             git add .
             git commit -m "Deploy to Github Pages"
