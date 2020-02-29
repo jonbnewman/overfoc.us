@@ -10,11 +10,6 @@ const noDisplay = css`
   display: none;
 `;
 
-const GitHub = styled(GitHubIcon)`
-  background: white;
-  border-radius: 2rem;
-`;
-
 const Container = styled.div`
   grid-area: image;
   align-self: center;
