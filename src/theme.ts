@@ -12,7 +12,7 @@ const breakpoints: any = {
 };
 
 export const lineColor = grey[400];
-export const headerFooterBg = grey[50];
+export const headerFooterBg = "white";
 export const headerPadding = "1rem";
 export const imageSize = "4rem";
 export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
@@ -82,7 +82,6 @@ export default createMuiTheme({
       color: "secondary",
     },
     MuiButton: {
-      color: "primary",
       disableElevation: true,
     },
   },

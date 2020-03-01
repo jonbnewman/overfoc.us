@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import Container from "@material-ui/core/Container";
+import { grey } from "@material-ui/core/colors";
 
 export default styled(Container).attrs({ disableGutters: true, maxWidth: false })`
   display: grid;
@@ -11,6 +12,7 @@ export default styled(Container).attrs({ disableGutters: true, maxWidth: false }
   grid-row-gap: 1rem;
   min-height: 100vh;
   font-family: "Lato", sans-serif;
+  background: ${grey[200]};
 
   * {
     box-sizing: border-box;
