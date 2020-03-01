@@ -32,7 +32,14 @@ function Footer() {
         </ControlsArea>
         <GithubArea>
           <div>
-            <Chip component="a" href={store.site_repo} icon={<GitHubIcon />} label="view on GitHub" clickable />
+            <Chip
+              component="a"
+              href={store.site_repo}
+              icon={<GitHubIcon />}
+              label="view on GitHub"
+              color="secondary"
+              clickable
+            />
           </div>
           <div>
             <Link href={store.circleci}>

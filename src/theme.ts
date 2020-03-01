@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 import { createMuiTheme } from "@material-ui/core/styles";
 import grey from "@material-ui/core/colors/grey";
-import { green, deepOrange, red, lightBlue } from "@material-ui/core/colors";
+import { lightBlue } from "@material-ui/core/colors";
 
 const breakpoints: any = {
   xs: 0,
