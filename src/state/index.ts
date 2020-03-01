@@ -10,7 +10,7 @@ export const projects = [
     url: "http://mobx-store-provider.overfoc.us",
     status: projectStatus.active,
     description: [
-      "**mobx-store-provider** is a library that provides [React Hooks](https://reactjs.org/docs/hooks-intro.html) to setup and access [mobx-state-tree](http://mobx-state-tree.js.org/) models from within [React Function Components](https://www.robinwieruch.de/react-function-component)",
+      "**mobx-store-provider** is a library that provides **React Hooks** to setup and access **mobx-state-tree** models from within **React Function Components**",
     ],
   },
   {

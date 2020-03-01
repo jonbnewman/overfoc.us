@@ -5,7 +5,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from "./CardMedia";
 import CardActionArea from "./CardActionArea";
 import Link from "./Link";
 
@@ -20,7 +19,6 @@ function ProjectDisplay({ project: { name, image, description, github, url } }: 
     <Card>
       <CardActionArea>
         <Link href={url || github}>
-          {image && <CardMedia image={image} title={name} />}
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {name}
@@ -34,9 +32,11 @@ function ProjectDisplay({ project: { name, image, description, github, url } }: 
         </Link>
       </CardActionArea>
       <CardActions>
-        <Button component={Link} href={github} size="small">
-          GitHub
-        </Button>
+        {github && (
+          <Button component={Link} href={github} size="small">
+            GitHub
+          </Button>
+        )}
         {url && (
           <Button component={Link} href={url} size="small" color="primary">
             View project

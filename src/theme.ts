@@ -3,13 +3,6 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import indigo from "@material-ui/core/colors/indigo";
 import grey from "@material-ui/core/colors/grey";
 
-export const lineColor = grey[400];
-export const headerFooterBg = grey[50];
-export const headerPadding = "1rem";
-export const imageSize = "4rem";
-export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
-
-export const headerCollapseSize = "sm";
 const breakpoints: any = {
   xs: 0,
   sm: 576,
@@ -17,7 +10,15 @@ const breakpoints: any = {
   lg: 992,
   xl: 1200,
 };
-export const constraintSize = `${breakpoints["md"]}px`;
+
+export const lineColor = grey[400];
+export const headerFooterBg = grey[50];
+export const headerPadding = "1rem";
+export const imageSize = "4rem";
+export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
+
+export const headerCollapseSize = "sm";
+export const constraintSize = "md";
 
 export function upTo(breakpoint: string | number, cssStyles: any = null) {
   return (...args: any[]) => {

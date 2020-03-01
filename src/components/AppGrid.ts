@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
+import Container from "@material-ui/core/Container";
 
-export default styled.div`
+export default styled(Container).attrs({ disableGutters: true, maxWidth: false })`
   display: grid;
   grid-template-rows: auto 1fr 120px;
   grid-template-areas:
