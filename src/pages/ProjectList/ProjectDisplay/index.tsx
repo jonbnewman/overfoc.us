@@ -9,6 +9,8 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import Link from "./Link";
 
 import { IProject } from "state/Project";
+import MarkdownStyles from "components/MarkdownStyles";
+import { Container } from "@material-ui/core";
 
 interface ProjectDisplayInterface {
   project: IProject;
@@ -16,34 +18,36 @@ interface ProjectDisplayInterface {
 
 function ProjectDisplay({ project: { name, image, description, github, url } }: ProjectDisplayInterface) {
   return (
-    <Card>
-      <CardActionArea>
-        <Link href={url || github}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="div">
-              {description.map((desc, id) => (
-                <ReactMarkdown source={desc} key={id} />
-              ))}
-            </Typography>
-          </CardContent>
-        </Link>
-      </CardActionArea>
-      <CardActions>
-        {github && (
-          <Button component={Link} href={github} size="small">
-            GitHub
-          </Button>
-        )}
-        {url && (
-          <Button component={Link} href={url} size="small" color="primary">
-            View project
-          </Button>
-        )}
-      </CardActions>
-    </Card>
+    <Container disableGutters maxWidth="sm">
+      <Card>
+        <CardActionArea>
+          <Link href={url || github}>
+            <CardContent component={MarkdownStyles}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {name}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="div">
+                {description.map((desc, id) => (
+                  <ReactMarkdown source={desc} key={id} />
+                ))}
+              </Typography>
+            </CardContent>
+          </Link>
+        </CardActionArea>
+        <CardActions>
+          {github && (
+            <Button component={Link} href={github} size="small">
+              GitHub
+            </Button>
+          )}
+          {url && (
+            <Button component={Link} href={url} size="small" color="primary">
+              View project
+            </Button>
+          )}
+        </CardActions>
+      </Card>
+    </Container>
   );
 }
 
