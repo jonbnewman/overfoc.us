@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import { useStore } from "mobx-store-provider";
-import { useTrail, animated } from "react-spring";
+import { useTrail, animated, config } from "react-spring";
 import theme from "theme";
 import { IStore } from "state/Store";
 import PageInterface from "../PageInterface";
@@ -16,6 +16,7 @@ function ProjectList({ location }: PageInterface): JSX.Element {
   }, [store, location.pathname]);
 
   const [trail, set] = useTrail(store.projects_list.length, () => ({
+    config: config.wobbly,
     opacity: 0,
     transform: `translate3d(0px, ${theme.spacing(2)}px, 0px)`,
   }));

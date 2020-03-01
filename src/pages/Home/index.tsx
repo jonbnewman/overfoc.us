@@ -20,10 +20,9 @@ function Home({ location }: PageInterface) {
 
   const [spring, set] = useSpring(() => ({
     opacity: 0,
-    transform: `translate3d(0px, ${theme.spacing(2)}px, 0px)`,
   }));
   // @ts-ignore
-  set({ opacity: 1, transform: `translate3d(0px, 0px, 0px)` });
+  set({ opacity: 1 });
 
   return store.isLoading ? (
     <LoadingDisplay />
