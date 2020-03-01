@@ -1,16 +1,15 @@
 import React from "react";
-import { observer } from "mobx-react";
-
 import Goo from "./Goo";
-import { useStore } from "mobx-store-provider";
-import { IStore } from "state/Store";
+
+export interface BackgroundEffectInterface {
+  children?: any;
+}
 
 const effects = [Goo];
 
-function BackgroundEffect() {
-  const store: IStore = useStore();
+function BackgroundEffect(props: BackgroundEffectInterface) {
   const Effect = effects[Math.floor(Math.random() * effects.length)];
-  return store.showBackgroundEffect ? <Effect /> : null;
+  return <Effect {...props} />;
 }
 
-export default observer(BackgroundEffect);
+export default BackgroundEffect;

@@ -3,9 +3,6 @@ import Container from "@material-ui/core/Container";
 import theme from "theme";
 
 export default styled(Container).attrs({ disableGutters: true, maxWidth: false })`
-  position: absolute;
-  top: 0;
-  left: 0;
   display: grid;
   grid-template-rows: auto 1fr 120px;
   grid-template-areas:

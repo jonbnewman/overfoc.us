@@ -34,19 +34,20 @@ function App() {
     <Provider value={store}>
       <Background>
         <Router>
-          <BackgroundEffect />
-          <AppGrid>
-            <Header />
-            <Body>
-              <Switch>
-                {store.project_status_types.map(statusType => (
-                  <Route path={statusType.path} component={ProjectList} key={statusType.status} />
-                ))}
-                <Route path="/" component={Home} />
-              </Switch>
-            </Body>
-            <Footer />
-          </AppGrid>
+          <BackgroundEffect>
+            <AppGrid>
+              <Header />
+              <Body>
+                <Switch>
+                  {store.project_status_types.map(statusType => (
+                    <Route path={statusType.path} component={ProjectList} key={statusType.status} />
+                  ))}
+                  <Route path="/" component={Home} />
+                </Switch>
+              </Body>
+              <Footer />
+            </AppGrid>
+          </BackgroundEffect>
         </Router>
       </Background>
     </Provider>
