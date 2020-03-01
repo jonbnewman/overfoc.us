@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 import { createMuiTheme } from "@material-ui/core/styles";
-import indigo from "@material-ui/core/colors/indigo";
+import lightBlue from "@material-ui/core/colors/lightBlue";
 import grey from "@material-ui/core/colors/grey";
 
 const breakpoints: any = {
@@ -56,6 +56,8 @@ export function downTo(breakpoint: string | number, cssStyles: any = null) {
   };
 }
 
+export const secondaryMain = lightBlue[900];
+
 export default createMuiTheme({
   palette: {
     type: "light",
@@ -63,7 +65,7 @@ export default createMuiTheme({
       main: grey[800],
     },
     secondary: {
-      main: indigo[500],
+      main: secondaryMain,
     },
   },
   typography: {

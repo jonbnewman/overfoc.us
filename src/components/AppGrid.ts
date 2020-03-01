@@ -1,18 +1,20 @@
 import styled from "styled-components/macro";
 import Container from "@material-ui/core/Container";
-import { lightBlue } from "@material-ui/core/colors";
+import theme from "theme";
 
 export default styled(Container).attrs({ disableGutters: true, maxWidth: false })`
+  position: absolute;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-rows: auto 1fr 120px;
   grid-template-areas:
     "header"
     "body"
     "footer";
-  grid-row-gap: 1rem;
+  grid-row-gap: ${`${theme.spacing(3)}px`};
   min-height: 100vh;
   font-family: "Lato", sans-serif;
-  background: ${lightBlue[200]};
 
   * {
     box-sizing: border-box;

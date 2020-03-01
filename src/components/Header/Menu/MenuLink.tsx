@@ -10,7 +10,7 @@ interface MenuLinkInterface {
 }
 
 function MenuLink(props: MenuLinkInterface) {
-  return <Button exact component={RouterLink} {...props} size="small" color="primary" />;
+  return <Button exact component={RouterLink} {...props} size="small" variant="contained" color="secondary" />;
 }
 
 export default styled(MenuLink)`
@@ -19,9 +19,14 @@ export default styled(MenuLink)`
     padding-right: 0.5rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &.active {
-      background: rgba(0, 0, 0, 0.05);
+      opacity: 1;
     }
   }
 `;

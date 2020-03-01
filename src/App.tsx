@@ -10,6 +10,8 @@ import AppGrid from "components/AppGrid";
 import Header from "components/Header";
 import Body from "components/Body";
 import Footer from "components/Footer";
+import BackgroundEffect from "components/BackgroundEffect";
+import Background from "components/Background";
 
 import Home from "pages/Home";
 import ProjectList from "pages/ProjectList";
@@ -30,20 +32,23 @@ function App() {
 
   return (
     <Provider value={store}>
-      <Router>
-        <AppGrid>
-          <Header />
-          <Body>
-            <Switch>
-              {store.project_status_types.map(statusType => (
-                <Route path={statusType.path} component={ProjectList} key={statusType.status} />
-              ))}
-              <Route path="/" component={Home} />
-            </Switch>
-          </Body>
-          <Footer />
-        </AppGrid>
-      </Router>
+      <Background>
+        <Router>
+          <BackgroundEffect />
+          <AppGrid>
+            <Header />
+            <Body>
+              <Switch>
+                {store.project_status_types.map(statusType => (
+                  <Route path={statusType.path} component={ProjectList} key={statusType.status} />
+                ))}
+                <Route path="/" component={Home} />
+              </Switch>
+            </Body>
+            <Footer />
+          </AppGrid>
+        </Router>
+      </Background>
     </Provider>
   );
 }
