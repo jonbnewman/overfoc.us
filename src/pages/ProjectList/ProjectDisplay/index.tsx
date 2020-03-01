@@ -1,17 +1,17 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import Link from "./Link";
 
 import { IProject } from "state/Project";
 import MarkdownStyles from "components/MarkdownStyles";
-import { Container } from "@material-ui/core";
+import Link from "./Link";
+import CardActions from "./CardActions";
+import Button from "./Button";
 
 interface ProjectDisplayInterface {
   project: IProject;
@@ -36,14 +36,21 @@ function ProjectDisplay({ project: { name, image, description, github, url } }: 
           </Link>
         </CardActionArea>
         <CardActions>
-          {url && (
-            <Button component="a" href={url} endIcon={<KeyboardArrowRightIcon />} variant="contained" color="secondary">
-              Project site
+          {github && (
+            <Button component="a" area="github" startIcon={<GitHubIcon />} href={github} variant="contained">
+              view on GitHub
             </Button>
           )}
-          {github && (
-            <Button component="a" startIcon={<GitHubIcon />} href={github}>
-              view on GitHub
+          {url && (
+            <Button
+              component="a"
+              area="project"
+              href={url}
+              endIcon={<KeyboardArrowRightIcon />}
+              variant="contained"
+              color="secondary"
+            >
+              Project site
             </Button>
           )}
         </CardActions>

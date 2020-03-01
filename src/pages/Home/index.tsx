@@ -6,6 +6,7 @@ import { IStore } from "state/Store";
 import PageInterface from "../PageInterface";
 import LoadingDisplay from "pages/LoadingDisplay";
 import MarkdownStyles from "components/MarkdownStyles";
+import Paper from "./Paper";
 
 function Home({ location }: PageInterface) {
   const store: IStore = useStore();
@@ -16,9 +17,11 @@ function Home({ location }: PageInterface) {
   return store.isLoading ? (
     <LoadingDisplay />
   ) : (
-    <MarkdownStyles>
-      <ReactMarkdown source={store.loadedMarkdown} />
-    </MarkdownStyles>
+    <Paper>
+      <MarkdownStyles>
+        <ReactMarkdown source={store.loadedMarkdown} />
+      </MarkdownStyles>
+    </Paper>
   );
 }
 

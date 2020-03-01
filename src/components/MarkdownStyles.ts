@@ -5,6 +5,10 @@ export default styled.div`
     margin: 0;
   }
 
+  h1:first-child {
+    margin-top: 0;
+  }
+
   a {
     text-decoration: none;
     &:hover {
