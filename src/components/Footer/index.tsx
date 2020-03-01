@@ -24,7 +24,7 @@ function Footer() {
               <Switch
                 checked={store.showBackgroundEffect}
                 onClick={store.toggleBackgroundEffect}
-                color="primary"
+                color="secondary"
                 inputProps={{ "aria-label": "Show background effect" }}
               />
             }
