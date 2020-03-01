@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { secondaryMain } from "theme";
 import chroma from "chroma-js";
 
+const blobColor = chroma(secondaryMain);
+
 const Styles = styled.div`
   height: 100vh;
   width: 100vw;
@@ -21,9 +23,6 @@ const Styles = styled.div`
     position: absolute;
     will-change: transform;
     border-radius: 50%;
-    background: ${chroma(secondaryMain)
-      .brighten()
-      .hex()};
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.6;
   }
@@ -31,16 +30,19 @@ const Styles = styled.div`
   .hooks-main > div:nth-child(1) {
     width: 120px;
     height: 120px;
+    background: ${blobColor.brighten(3).hex()};
   }
 
   .hooks-main > div:nth-child(2) {
     width: 250px;
     height: 250px;
+    background: ${blobColor.brighten(2).hex()};
   }
 
   .hooks-main > div:nth-child(3) {
     width: 150px;
     height: 150px;
+    background: ${blobColor.brighten(4).hex()};
   }
 
   .hooks-main > div::after {
