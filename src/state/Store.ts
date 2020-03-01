@@ -21,6 +21,9 @@ function getStatusObject(status: string) {
   };
 }
 
+let showBackgroundEffect: any = localStorage.getItem("showBackgroundEffect");
+showBackgroundEffect = showBackgroundEffect === null ? true : JSON.parse(showBackgroundEffect);
+
 export const Store = types
   .model({
     name: types.string,
@@ -34,7 +37,7 @@ export const Store = types
     pagePath: types.maybeNull(types.string),
     isLoading: false,
     loadedMarkdown: types.array(types.string),
-    showBackgroundEffect: true,
+    showBackgroundEffect: types.optional(types.boolean, showBackgroundEffect),
   })
   .views(self => ({
     get project_status_types() {
@@ -59,6 +62,7 @@ export const Store = types
   .actions(self => ({
     toggleBackgroundEffect() {
       self.showBackgroundEffect = !self.showBackgroundEffect;
+      localStorage.setItem("showBackgroundEffect", self.showBackgroundEffect ? "true" : "false");
     },
     setPagePath(path: string) {
       self.pagePath = path;
