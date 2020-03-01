@@ -2,6 +2,7 @@ import { types, Instance } from "mobx-state-tree";
 
 export const Project = types.model({
   name: types.string,
+  url: types.maybe(types.string),
   github: types.maybe(types.string),
   image: types.maybe(types.string),
   status: types.string,

@@ -7,6 +7,7 @@ export const projects = [
   {
     name: "mobx-store-provider",
     github: "http://github.com/jonbnewman/mobx-store-provider",
+    url: "http://mobx-store-provider.overfoc.us",
     status: projectStatus.active,
     description: [
       "**mobx-store-provider** is a library that provides [React Hooks](https://reactjs.org/docs/hooks-intro.html) to setup and access [mobx-state-tree](http://mobx-state-tree.js.org/) models from within [React Function Components](https://www.robinwieruch.de/react-function-component)",
@@ -15,6 +16,7 @@ export const projects = [
   {
     name: "Footwork",
     github: "https://github.com/footworkjs/footwork",
+    url: "http://footworkjs.com",
     image: "/images/projects/footwork.png",
     status: projectStatus.archived,
     description: [

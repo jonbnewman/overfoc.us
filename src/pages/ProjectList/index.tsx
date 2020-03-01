@@ -3,13 +3,21 @@ import { observer } from "mobx-react";
 import { useStore } from "mobx-store-provider";
 import { IStore } from "state/Store";
 import PageInterface from "../PageInterface";
+import ProjectDisplay from "./ProjectDisplay";
+import Container from "./Container";
 
-function ProjectList({ location }: PageInterface) {
+function ProjectList({ location }: PageInterface): JSX.Element {
   const store: IStore = useStore();
   useEffect(() => {
     store.setPagePath(location.pathname);
   }, [store, location.pathname]);
-  return <pre>{JSON.stringify(store.projects_list, null, 2)}</pre>;
+  return (
+    <Container>
+      {store.projects_list.map(project => (
+        <ProjectDisplay key={project.name} project={project} />
+      ))}
+    </Container>
+  );
 }
 
 export default observer(ProjectList);
