@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { observer } from "mobx-react";
 import { useStore } from "mobx-store-provider";
 import { useSpring, animated } from "react-spring";
-import theme from "theme";
 import ReactMarkdown from "react-markdown";
 import { IStore } from "state/Store";
 import PageInterface from "../PageInterface";
