@@ -10,7 +10,7 @@ function Home({ location }: PageInterface) {
   const store: IStore = useStore();
 
   useEffect(() => {
-    store.loadMarkdown(require("./contents.md"));
+    store.loadMarkdown([require("./contents.md")]);
     store.setPagePath(location.pathname);
   }, [store, location.pathname]);
 

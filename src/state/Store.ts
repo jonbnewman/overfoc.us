@@ -33,7 +33,7 @@ export const Store = types
     projects: types.array(Project),
     pagePath: types.maybeNull(types.string),
     isLoading: false,
-    loadedMarkdown: types.maybe(types.string),
+    loadedMarkdown: types.array(types.string),
     showBackgroundEffect: true,
   })
   .views(self => ({
@@ -64,19 +64,33 @@ export const Store = types
       self.pagePath = path;
       return self;
     },
-    loadMarkdown: flow(function* loadMarkdown(path) {
-      let markdown: any = null;
+    fetchMarkdown: flow(function* fetchMarkdown(path) {
+      let markdown: string | null = null;
+      try {
+        markdown = yield fetch(path).then(response => response.text());
+      } catch (error) {
+        throw error;
+      }
+      return markdown;
+    }),
+    addMarkdown(markdown: string) {
+      self.loadedMarkdown.push(markdown);
+    },
+  }))
+  .actions(self => ({
+    loadMarkdown: flow(function* loadMarkdown(paths: string[]) {
       if (!self.isLoading) {
         self.isLoading = true;
+        const markdownFetches: Promise<any>[] = paths.map(self.fetchMarkdown);
         try {
-          markdown = yield fetch(path).then(response => response.text());
-          self.loadedMarkdown = markdown;
+          const data = yield Promise.all(markdownFetches);
+          self.loadedMarkdown = data;
         } catch (error) {
           throw error;
         }
         self.isLoading = false;
       }
-      return markdown;
+      return self.loadedMarkdown;
     }),
   }));
 
