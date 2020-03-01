@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+import Button, { ButtonProps } from "@material-ui/core/Button";
 
 interface ButtonAreaInterface {
   area: string;
   component: any;
 }
 
-export default styled(Button)<ButtonAreaInterface>`
+export default styled(Button)<ButtonAreaInterface & ButtonProps>`
   grid-area: ${({ area }: any) => area};
 `;
