@@ -4,8 +4,7 @@ import { constraintSize } from "theme";
 
 export default styled(Container).attrs({ maxWidth: constraintSize })`
   padding-top: 1rem;
-  text-align: right;
   display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 0.5rem;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "controls . github";
 `;

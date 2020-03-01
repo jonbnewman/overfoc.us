@@ -34,6 +34,7 @@ export const Store = types
     pagePath: types.maybeNull(types.string),
     isLoading: false,
     loadedMarkdown: types.maybe(types.string),
+    showBackgroundEffect: true,
   })
   .views(self => ({
     get project_status_types() {
@@ -56,6 +57,9 @@ export const Store = types
     },
   }))
   .actions(self => ({
+    toggleBackgroundEffect() {
+      self.showBackgroundEffect = !self.showBackgroundEffect;
+    },
     setPagePath(path: string) {
       self.pagePath = path;
       return self;

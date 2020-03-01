@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
 import styled from "styled-components";
+import chroma from "chroma-js";
+import { secondaryMain } from "theme";
 
 /**
- * This effect was directly lifted from:
+ * Credits/disclosure, this effect is a slightly
+ * modified copy of:
  * https://www.react-spring.io/docs/hooks/examples
  */
-import { secondaryMain } from "theme";
-import chroma from "chroma-js";
 
 const blobColor = chroma(secondaryMain);
 
