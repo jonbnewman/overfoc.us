@@ -4,11 +4,9 @@ import { useStore } from "mobx-store-provider";
 import { useTrail } from "react-spring";
 import { IStore } from "state/Store";
 
-import { BackgroundEffectInterface } from "../index";
 import EffectFilter from "./EffectFilter";
 import EffectArea from "./EffectArea";
 import Blob from "./Blob";
-import Children from "./Children";
 
 /**
  * Credits/disclosure, this effect heavily influenced by:
@@ -19,7 +17,7 @@ const fast = { tension: 1200, friction: 40 };
 const slow = { mass: 10, tension: 200, friction: 50 };
 const trans = (x: number, y: number) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 
-function Goo({ children }: BackgroundEffectInterface) {
+function Goo() {
   // @ts-ignore
   const [trail, set] = useTrail(3, () => ({ xy: [0, 0], config: i => (i === 0 ? fast : slow) }));
   const store: IStore = useStore();
@@ -46,7 +44,6 @@ function Goo({ children }: BackgroundEffectInterface) {
           return <Blob key={index} style={{ transform: props.xy.interpolate(trans) }} />;
         })}
       </EffectArea>
-      <Children>{children}</Children>
     </>
   );
 }
