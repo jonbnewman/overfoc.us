@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { NavLink as RouterLink } from "react-router-dom";
-import Button, { ButtonProps } from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 
 interface MenuLinkInterface {
   to: string;

@@ -1,7 +1,9 @@
 import { css } from "styled-components";
 import { createMuiTheme } from "@material-ui/core/styles";
+import chroma from "chroma-js";
 import grey from "@material-ui/core/colors/grey";
-import { blue } from "@material-ui/core/colors";
+import { blue, deepOrange, red } from "@material-ui/core/colors";
+const colors = [blue, deepOrange, red];
 
 const breakpoints: any = {
   xs: 0,
@@ -11,7 +13,11 @@ const breakpoints: any = {
   xl: 1200,
 };
 
-export const lineColor = grey[400];
+const color = colors[Math.floor(Math.random() * colors.length)];
+const colorCode = 900;
+
+export const secondaryMain = color[colorCode];
+export const lineColor = chroma(secondaryMain).darken(2);
 export const headerFooterBg = "white";
 export const headerPadding = "1rem";
 export const imageSize = "4rem";
@@ -55,8 +61,6 @@ export function downTo(breakpoint: string | number, cssStyles: any = null) {
     `;
   };
 }
-
-export const secondaryMain = blue[800];
 
 export default createMuiTheme({
   palette: {
