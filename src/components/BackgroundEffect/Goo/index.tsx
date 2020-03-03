@@ -8,7 +8,7 @@ import { BackgroundEffectInterface } from "../index";
 import Blob from "./Blob";
 import EffectArea from "./EffectArea";
 import Children from "./Children";
-import FilterSVG from "./FilterSVG";
+import EffectFilter from "./EffectFilter";
 
 /**
  * Credits/disclosure, this effect heavily influenced by:
@@ -36,12 +36,12 @@ function Goo({ children }: BackgroundEffectInterface) {
   // @ts-ignore
   return (
     <>
-      <FilterSVG>
+      <EffectFilter>
         <filter id="goo">
           <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
           <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
         </filter>
-      </FilterSVG>
+      </EffectFilter>
       <EffectArea show={store.showBackgroundEffect ? "true" : "false"}>
         {trail.map((props, index) => {
           // @ts-ignore
