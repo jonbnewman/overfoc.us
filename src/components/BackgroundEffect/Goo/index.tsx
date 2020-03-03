@@ -31,12 +31,11 @@ function Goo() {
     return () => document.removeEventListener("mousemove", mouseMoved);
   }, [set]);
 
-  // @ts-ignore
   return (
     <>
       <EffectFilter>
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
-        <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
+        <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+        <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
       </EffectFilter>
       <EffectArea show={store.showBackgroundEffect ? "true" : "false"}>
         {trail.map((props, index) => {

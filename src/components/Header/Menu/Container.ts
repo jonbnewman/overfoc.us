@@ -6,4 +6,5 @@ export default styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 0.5rem;
+  padding-bottom: 0.5rem;
 `;

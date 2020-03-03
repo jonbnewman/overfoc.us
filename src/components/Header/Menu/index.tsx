@@ -9,8 +9,8 @@ function Menu() {
   const store: IStore = useStore();
   return (
     <Container>
-      <MenuLink startIcon={<HomeIcon />} to="/">
-        Home
+      <MenuLink to="/">
+        <HomeIcon />
       </MenuLink>
       {store.project_status_types.map((statusType: any) => (
         <MenuLink key={statusType.status} to={statusType.path}>
