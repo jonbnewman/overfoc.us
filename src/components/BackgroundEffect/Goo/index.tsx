@@ -5,10 +5,10 @@ import { useTrail } from "react-spring";
 import { IStore } from "state/Store";
 
 import { BackgroundEffectInterface } from "../index";
-import Blob from "./Blob";
-import EffectArea from "./EffectArea";
-import Children from "./Children";
 import EffectFilter from "./EffectFilter";
+import EffectArea from "./EffectArea";
+import Blob from "./Blob";
+import Children from "./Children";
 
 /**
  * Credits/disclosure, this effect heavily influenced by:
@@ -37,10 +37,8 @@ function Goo({ children }: BackgroundEffectInterface) {
   return (
     <>
       <EffectFilter>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
-          <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
-        </filter>
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />
+        <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -7" />
       </EffectFilter>
       <EffectArea show={store.showBackgroundEffect ? "true" : "false"}>
         {trail.map((props, index) => {
