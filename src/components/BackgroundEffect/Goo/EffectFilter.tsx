@@ -14,7 +14,7 @@ interface EffectFilterInterface {
 function EffectFilter({ children }: EffectFilterInterface) {
   return (
     <SVG>
-      <filter id="goo">{children}</filter>
+      <filter id="effect-filter">{children}</filter>
     </SVG>
   );
 }

@@ -9,7 +9,7 @@ export default styled.div<EffectAreaInterface>`
   position: absolute;
   width: 100%;
   height: 100%;
-  filter: url("#goo");
+  filter: url("#effect-filter");
   overflow: hidden;
 
   & > svg {
