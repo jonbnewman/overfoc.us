@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 import { createMuiTheme } from "@material-ui/core/styles";
 import grey from "@material-ui/core/colors/grey";
-import { lightBlue } from "@material-ui/core/colors";
+import { blue } from "@material-ui/core/colors";
 
 const breakpoints: any = {
   xs: 0,
@@ -56,7 +56,7 @@ export function downTo(breakpoint: string | number, cssStyles: any = null) {
   };
 }
 
-export const secondaryMain = lightBlue[800];
+export const secondaryMain = blue[800];
 
 export default createMuiTheme({
   palette: {
