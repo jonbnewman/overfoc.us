@@ -11,8 +11,7 @@ import Children from "./Children";
 import FilterSVG from "./FilterSVG";
 
 /**
- * Credits/disclosure, this effect is a slightly
- * modified copy of:
+ * Credits/disclosure, this effect heavily influenced by:
  * https://www.react-spring.io/docs/hooks/examples
  */
 
