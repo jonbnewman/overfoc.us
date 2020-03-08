@@ -22,7 +22,6 @@ export const headerFooterBg = "white";
 export const headerPadding = "1rem";
 export const imageSize = "4rem";
 export const headerHeight = `calc(${imageSize} + (2 * ${headerPadding}))`;
-
 export const headerCollapseSize = "sm";
 export const constraintSize = "md";
 
